@@ -69,7 +69,7 @@
             <artifactId>esper</artifactId>
         </dependency>
         <dependency>
-            <groupId>berkeleydb</groupId>
+            <groupId>com.sleepycat</groupId>
             <artifactId>je</artifactId>
         </dependency>
         <dependency>

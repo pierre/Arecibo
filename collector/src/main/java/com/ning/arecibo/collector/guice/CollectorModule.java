@@ -29,7 +29,6 @@ import com.ning.arecibo.collector.persistent.BackgroundDBChunkWriter;
 import com.ning.arecibo.collector.persistent.TimelineAggregator;
 import com.ning.arecibo.collector.persistent.TimelineEventHandler;
 import com.ning.arecibo.collector.process.EventHandler;
-import com.ning.arecibo.collector.rt.kafka.KafkaEventHandler;
 import com.ning.arecibo.eventlogger.Event;
 import com.ning.arecibo.util.ArrayListProvider;
 import com.ning.arecibo.util.Logger;
@@ -208,14 +207,6 @@ public class CollectorModule extends AbstractModule
         });
         bind(TimelineEventHandler.class).toProvider(lifecycledProvider).asEagerSingleton();
         provider.addExportable(TimelineEventHandler.class);
-
-        // Hook the real-time handler as needed
-        // TODO - do we want to turn it off/on at runtime?
-        if (config.isKafkaEnabled()) {
-            log.info("Kafka producer configured");
-            bind(KafkaEventHandler.class).asEagerSingleton();
-            provider.addExportable(KafkaEventHandler.class);
-        }
 
         bind(new TypeLiteral<List<EventHandler>>()
         {

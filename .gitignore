@@ -11,3 +11,4 @@ alertmanager/logs
 dashboard/logs
 dashboard/spool
 dev/
+.idea

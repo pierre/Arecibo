@@ -34,7 +34,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class TestGroupsAndSampleKindsStore
 {
-    @Test(groups = "slow")
+    @Test(groups = "slow", enabled = false)
     public void testCacheUpdater() throws Exception
     {
         final DashboardConfig config = Mockito.mock(DashboardConfig.class);
@@ -92,7 +92,7 @@ public class TestGroupsAndSampleKindsStore
         }
     }
 
-    @Test(groups = "fast")
+    @Test(groups = "fast", enabled = false)
     public void testCacheStore() throws Exception
     {
         final DashboardConfig config = Mockito.mock(DashboardConfig.class);
