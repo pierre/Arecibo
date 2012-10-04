@@ -27,9 +27,9 @@ To start the collector, assuming MySQL is running locally:
         -Dcom.sun.management.jmxremote.authenticate=false \
         -Dcom.sun.management.jmxremote.port=8990 \
         -Dcom.sun.management.jmxremote.ssl=false \
-        -Darecibo.events.collector.db.url=jdbc:mysql://127.0.0.1:3306/arecibo \
-        -Darecibo.events.collector.db.user=root \
-        -Darecibo.events.collector.db.password=root
+        -Darecibo.collector.db.url=jdbc:mysql://127.0.0.1:3306/arecibo \
+        -Darecibo.collector.db.user=root \
+        -Darecibo.collector.db.password=root \
         -jar target/arecibo-collector-*-jar-with-dependencies.jar
 
 
