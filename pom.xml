@@ -37,6 +37,11 @@
     </properties>
     <repositories>
         <repository>
+            <!-- Until we get rid of old BETA metrics dependencies -->
+            <id>repo.codahale.com</id>
+            <url>http://repo.codahale.com</url>
+        </repository>
+        <repository>
             <id>oracleReleases</id>
             <name>Oracle Released Java Packages</name>
             <url>http://download.oracle.com/maven</url>
