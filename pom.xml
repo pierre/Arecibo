@@ -924,7 +924,7 @@
                                     <exclude>release-script</exclude>
                                     <exclude>doc/**</exclude>
                                     <exclude>src/site/**</exclude>
-                                    <exclude>*.log</exclude>
+                                    <exclude>**/*.log</exclude>
                                     <!-- We have some extra dependencies in there, see license on a per file basis -->
                                     <exclude>src/utils/**</exclude>
                                     <!-- This is a straight import from the upstream libraries -->

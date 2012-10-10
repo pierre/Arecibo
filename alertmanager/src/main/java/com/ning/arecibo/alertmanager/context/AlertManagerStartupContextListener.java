@@ -45,8 +45,8 @@ public class AlertManagerStartupContextListener extends SetupServer
             .addModule(new LifecycleModule())
             .addModule(new AlertManagerModule())
             .enableLog4J()
-            .addResource("com.ning.arecibo.alertmanager.resources")
-            .addResource("com.ning.arecibo.util.jaxrs");
+            .addJerseyResource("com.ning.arecibo.alertmanager.resources")
+            .addJerseyResource("com.ning.arecibo.util.jaxrs");
 
         guiceModule = builder.build();
 

@@ -260,6 +260,7 @@
                         </goals>
                         <configuration>
                             <excludes>
+                                <exclude>**/*.log</exclude>
                                 <exclude>.gitignore</exclude>
                                 <exclude>src/main/resources/collector.sql</exclude>
                                 <exclude>
