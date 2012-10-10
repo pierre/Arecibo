@@ -16,9 +16,11 @@
 
 package com.ning.arecibo.collector.healthchecks;
 
-import com.google.inject.Inject;
 import com.ning.arecibo.util.timeline.persistent.TimelineDAO;
+
+import com.google.inject.Inject;
 import com.yammer.metrics.core.HealthCheck;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,13 +33,8 @@ public class DAOHealthCheck extends HealthCheck
     @Inject
     public DAOHealthCheck(final TimelineDAO dao)
     {
+        super(DAOHealthCheck.class.getSimpleName());
         this.dao = dao;
-    }
-
-    @Override
-    public String name()
-    {
-        return DAOHealthCheck.class.getSimpleName();
     }
 
     @Override
@@ -47,11 +44,11 @@ public class DAOHealthCheck extends HealthCheck
             dao.test();
         }
         catch (Exception e) {
-            log.warn("{} check failed", name());
+            log.warn("{} check failed", getName());
             return Result.unhealthy(e);
         }
 
-        log.info("{} check succeeded", name());
+        log.info("{} check succeeded", getName());
         return Result.healthy();
     }
 }

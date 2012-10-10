@@ -47,7 +47,8 @@ import com.ning.arecibo.util.timeline.times.TimelineCoderImpl;
 import com.ning.jersey.metrics.TimedResourceModule;
 import com.yammer.metrics.core.HealthCheck;
 import com.yammer.metrics.guice.InstrumentationModule;
-import com.yammer.metrics.reporting.guice.MetricsServletModule;
+import com.yammer.metrics.guice.servlet.AdminServletModule;
+
 import org.skife.config.ConfigurationObjectFactory;
 import org.skife.jdbi.v2.DBI;
 import org.skife.jdbi.v2.IDBI;
@@ -161,7 +162,7 @@ public class CollectorModule extends AbstractModule
 
     protected void configureStats()
     {
-        install(new MetricsServletModule("/1.0/healthcheck", "/1.0/metrics", "/1.0/ping", "/1.0/threads"));
+        install(new AdminServletModule("/1.0/healthcheck", "/1.0/metrics", "/1.0/ping", "/1.0/threads"));
         final Multibinder<HealthCheck> healthChecksBinder = Multibinder.newSetBinder(binder(), HealthCheck.class);
         healthChecksBinder.addBinding().to(TimelineEventHandlerHealthCheck.class).asEagerSingleton();
         healthChecksBinder.addBinding().to(DAOHealthCheck.class).asEagerSingleton();

@@ -41,13 +41,8 @@ public class TimelineEventHandlerHealthCheck extends HealthCheck
     @Inject
     public TimelineEventHandlerHealthCheck(final TimelineEventHandler eventHandler)
     {
+        super(TimelineEventHandlerHealthCheck.class.getSimpleName());
         this.processor = eventHandler;
-    }
-
-    @Override
-    public String name()
-    {
-        return TimelineEventHandlerHealthCheck.class.getSimpleName();
     }
 
     @Override
@@ -64,11 +59,11 @@ public class TimelineEventHandlerHealthCheck extends HealthCheck
             processor.handle(new MapEvent(System.currentTimeMillis(), EVENT_TYPE, EVENT_UUID, payload));
         }
         catch (Exception e) {
-            log.warn("{} check failed", name());
+            log.warn("{} check failed", getName());
             return Result.unhealthy(e);
         }
 
-        log.info("{} check succeeded", name());
+        log.info("{} check succeeded", getName());
         return Result.healthy();
     }
 }

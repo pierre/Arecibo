@@ -12,3 +12,4 @@ dashboard/logs
 dashboard/spool
 dev/
 .idea
+*/logs/

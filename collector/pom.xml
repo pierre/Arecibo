@@ -69,7 +69,6 @@
         <dependency>
             <groupId>com.ning.jetty</groupId>
             <artifactId>ning-service-skeleton-jaxrs</artifactId>
-            <version>0.0.22</version>
         </dependency>
         <dependency>
             <groupId>com.ning</groupId>

@@ -33,8 +33,6 @@
         </layout>
     </appender>
 
-    <appender name="LOG_LEVEL_COUNTER" class="com.ning.jetty.log4j.LogLevelCounterAppender"/>
-
     <logger name="com.sun.jersey.api.container.filter" additivity="false">
         <level value="info"/>
         <appender-ref ref="requests"/>
@@ -55,6 +53,5 @@
     <root>
         <level value="info"/>
         <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="LOG_LEVEL_COUNTER"/>
     </root>
 </log4j:configuration>
