@@ -1,10 +1,7 @@
 Overview
 --------
 
-1. To build
-
-    mvn clean install
-
+1. Make sure to read the installation guide: https://github.com/ning/Arecibo/wiki/Building-Arecibo
 2. Detailed documentation: see https://github.com/ning/Arecibo/wiki
 
 
