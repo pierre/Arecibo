@@ -24,6 +24,7 @@ Before starting the collector, you need to create a database first, e.g.:
 To start the collector, assuming MySQL is running locally:
 
     java \
+        -Dlog4j.configuration=file://$PWD/src/test/resources/log4j.xml \
         -Dcom.sun.management.jmxremote.authenticate=false \
         -Dcom.sun.management.jmxremote.port=8990 \
         -Dcom.sun.management.jmxremote.ssl=false \
